@@ -74,12 +74,12 @@
   }
   .logo .mark{
     width:26px;height:26px;border-radius:50%;
-    border:2px solid var(--ignition);
+    border:2px solid var(--cream);
     position:relative;flex-shrink:0;
   }
   .logo .mark::after{
     content:'';position:absolute;inset:4px;border-radius:50%;
-    background:var(--ignition);
+    background:var(--cream);
     animation:pulseMark 3s var(--ease) infinite;
   }
   @keyframes pulseMark{0%,100%{opacity:1;}50%{opacity:.4;}}
@@ -115,6 +115,12 @@
     font-family:'Big Shoulders Display',sans-serif;
     font-size:13vw;font-weight:700;color:var(--cream);
     text-transform:uppercase;padding:10px 0;border-bottom:1px solid var(--line);
+  }
+
+  /* ---------- responsive nav switch ---------- */
+  @media (max-width:900px){
+    nav.desktop-nav{display:none;}
+    .burger{display:flex;}
   }
 
   /* ---------- hero ---------- */
@@ -171,13 +177,13 @@
     font-size:clamp(48px,9vw,124px);font-weight:800;line-height:0.92;
     letter-spacing:-0.01em;
   }
-  h1.hero-title .line{display:block;overflow:hidden;}
+  h1.hero-title .line{display:block;overflow:hidden;padding-bottom:0.14em;margin-bottom:-0.14em;}
   h1.hero-title .line span{
     display:block;transform:translateY(110%);
     animation:lineUp .9s var(--ease) forwards;
   }
   h1.hero-title .line:nth-child(1) span{animation-delay:1.6s;}
-  h1.hero-title .line:nth-child(2) span{animation-delay:1.75s;color:var(--ignition);}
+  h1.hero-title .line:nth-child(2) span{animation-delay:1.75s;}
   @keyframes lineUp{to{transform:translateY(0);}}
   .hero-sub{
     max-width:480px;margin-top:26px;font-size:17px;line-height:1.6;
@@ -189,12 +195,12 @@
     opacity:0;animation:fadeUp .7s var(--ease) 2.3s forwards;
   }
   .btn-primary{
-    background:var(--ignition);color:var(--cream);padding:17px 32px;
+    background:var(--cream);color:var(--charcoal);padding:17px 32px;
     font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
     border-radius:var(--radius);display:inline-flex;align-items:center;gap:10px;
-    transition:background .25s var(--ease),transform .25s var(--ease);
+    transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
   }
-  .btn-primary:hover{background:#ff6a3f;transform:translateY(-2px);}
+  .btn-primary:hover{background:var(--charcoal-2);color:var(--cream);transform:translateY(-2px);}
   .btn-secondary{
     border:1px solid var(--line);color:var(--cream);padding:16px 30px;
     font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
